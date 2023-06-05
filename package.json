@@ -2,6 +2,10 @@
   "name": "js",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest"
+  },
   "devDependencies": {
     "vite": "^4.3.9",
     "vitest": "^0.31.4"
