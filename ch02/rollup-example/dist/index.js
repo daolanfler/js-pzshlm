@@ -1,3 +1,8 @@
+/*!
+  * rollup-example 1.0.0 
+  * Licensed under MIT
+  */
+
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });

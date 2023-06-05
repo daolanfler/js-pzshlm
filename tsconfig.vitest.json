@@ -5,7 +5,8 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "types": ["vitest"],
+    "resolveJsonModule": true
   },
-  "include": ["ch*/**/*"],
+  "include": ["ch*/**/*", "**/*.json"],
   "exclude": []
 }
