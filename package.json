@@ -2,5 +2,8 @@
   "name": "js",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {}
+  "devDependencies": {
+    "vite": "^4.3.9",
+    "vitest": "^0.31.4"
+  }
 }
