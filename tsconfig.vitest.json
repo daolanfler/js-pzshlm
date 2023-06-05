@@ -1,10 +1,10 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.app.json",
   "compilerOptions": {
     "composite": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "types": ["vitest"]
+    "types": ["vitest"],
   },
   "include": ["ch*/**/*"],
   "exclude": []
