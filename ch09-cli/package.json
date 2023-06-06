@@ -1,6 +1,6 @@
 {
-  "name": "ch09-cli",
-  "version": "1.0.0",
+  "name": "@funkey/create-demolib",
+  "version": "1.0.0-alpha.0",
   "description": "",
   "type": "module",
   "scripts": {
