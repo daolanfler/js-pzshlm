@@ -4,6 +4,9 @@ import { hideBin } from "yargs/helpers";
 import process from "process";
 import { runInitPrompts } from "./run-prompt.js";
 import { init } from "./init.js";
+import { init as initLog } from "./util/log.js";
+
+initLog();
 
 const argv = yargs(hideBin(process.argv))
   .usage(`usage: jslibbook [options]`)
@@ -28,9 +31,8 @@ const argv = yargs(hideBin(process.argv))
       // console.log((argv));
       const answers = await runInitPrompts(argv._[1], argv);
       // console.log(answers);
-      init(argv, answers);
+      await init(argv, answers);
     }
   )
   .epilog("copyRight by zhangsan")
   .demandCommand().argv;
-

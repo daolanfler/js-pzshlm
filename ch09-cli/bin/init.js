@@ -7,6 +7,7 @@ import { init as initCommitlint } from "./commitlint/index.js";
 import { init as initTest } from "./test/index.js";
 import { init as initHusky } from "./husky/index.js";
 import { init as initCi } from "./ci/index.js";
+import { init as initManager } from "./manager/index.js";
 
 export async function init(argv, answers) {
   // cmmand running path
@@ -23,7 +24,7 @@ export async function init(argv, answers) {
     return;
   }
 
-  console.log(cmdPath, name);
+  console.log({ cmdPath }, { name });
   if (checkProjectExists(cmdPath, name)) {
     console.log("项目已存在");
     process.exit(1);
@@ -38,4 +39,5 @@ export async function init(argv, answers) {
   await initTest(cmdPath, pathname, option);
   await initHusky(cmdPath, pathname, option);
   await initCi(cmdPath, pathname, option);
+  await initManager(cmdPath, pathname, option)
 }
