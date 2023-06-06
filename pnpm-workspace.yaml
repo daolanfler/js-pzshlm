@@ -1,2 +1,3 @@
 packages: 
   - 'ch02/*'
+  - 'ch08'
