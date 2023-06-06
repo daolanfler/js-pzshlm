@@ -1,6 +1,7 @@
 import fs from "fs-extra";
 import path from "path";
 import template from "template_js";
+import { extendDeep } from "@jsmini/extend";
 
 export async function copyFile(from, to) {
   console.log(from, to);
@@ -20,7 +21,7 @@ export function mkdirSyncGuard(target) {
 export async function copyTmpl(from, to, data = {}) {
   if (path.extname(from) !== ".tmpl") {
     await copyFile(from, to);
-    return 
+    return;
   }
   const parentPath = path.dirname(to);
 
@@ -33,4 +34,23 @@ function readTmpl(from, data) {
     encoding: "utf-8",
   });
   return template(content, data);
+}
+
+export function mergeObj2JSON(object, to) {
+  const json = JSON.parse(fs.readFileSync(to, { encoding: "utf8" }));
+
+  extendDeep(json, object);
+
+  fs.writeFileSync(to, JSON.stringify(json, null, "  "), { encoding: "utf8" });
+}
+
+export function mergeJSON2JSON(from, to) {
+  const json = JSON.parse(fs.readFileSync(from, { encoding: "utf8" }));
+
+  mergeObj2JSON(json, to);
+}
+
+function mergeTmpl2JSON(from, to, data = {}) {
+  const json = JSON.parse(readTmpl(from, data));
+  mergeObj2JSON(json, to);
 }

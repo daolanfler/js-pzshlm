@@ -65,6 +65,9 @@ importers:
 
   ch09-cli:
     dependencies:
+      '@jsmini/extend':
+        specifier: ^0.3.3
+        version: registry.npmmirror.com/@jsmini/extend@0.3.3
       '@types/inquirer':
         specifier: ^9.0.3
         version: registry.npmmirror.com/@types/inquirer@9.0.3
