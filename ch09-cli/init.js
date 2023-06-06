@@ -10,4 +10,3 @@ export function init(argv, answers) {
     process.exit(1);
   }
 }
-console.log(root);
