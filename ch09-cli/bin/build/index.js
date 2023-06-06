@@ -1,5 +1,5 @@
-const path = require("path");
-const { copyTmpl, copyFile, mergeTmpl2JSON } = require("../util/copy");
+import path from 'path'
+// const { copyTmpl, copyFile, mergeTmpl2JSON } = require("../util/copy");
 
 function init(cmdPath, name, option) {
     console.log("@js-lib/build: init");
