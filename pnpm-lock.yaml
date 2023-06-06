@@ -74,6 +74,9 @@ importers:
       inquirer:
         specifier: ^9.2.7
         version: registry.npmmirror.com/inquirer@9.2.7
+      template_js:
+        specifier: ^2.4.0
+        version: registry.npmmirror.com/template_js@2.4.0
       validate-npm-package-name:
         specifier: ^5.0.0
         version: registry.npmmirror.com/validate-npm-package-name@5.0.0
@@ -1044,7 +1047,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: registry.npmmirror.com/regenerator-runtime@0.13.11
-    dev: true
 
   registry.npmmirror.com/@babel/template@7.21.9:
     resolution: {integrity: sha512-MK0X5k8NKOuWRamiEfc3KEJiHMTkGZNUjzMipqCGDDc6ijRl/B7RGSKVGncu4Ro/HdyzzY6cmoXuKI2Gffk7vQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@babel/template/-/template-7.21.9.tgz}
@@ -1396,6 +1398,57 @@ packages:
     resolution: {integrity: sha512-sjUvNoRdpFC4T9BA1v8fTahLP+8oKZaEbBWlm+UJYJgteHVfadmme9sjiAngL9IG/ljcZMaFst8RCMvWyx2Fmg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@jslib-book/type/-/type-1.0.2.tgz}
     name: '@jslib-book/type'
     version: 1.0.2
+    dev: false
+
+  registry.npmmirror.com/@jsmini/extend@0.3.3:
+    resolution: {integrity: sha512-kR8IOP+cwS1f+RF/GFO4pzODqGtubE0XsqAoYDYsK6JGQ8YLsrGuY2ZolpjvwrzjR/vOpuaYpeS9RUfvowSJjA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@jsmini/extend/-/extend-0.3.3.tgz}
+    name: '@jsmini/extend'
+    version: 0.3.3
+    engines: {node: '>= 0.12.0'}
+    dependencies:
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.22.3
+      '@jsmini/is': registry.npmmirror.com/@jsmini/is@0.8.5
+    dev: false
+
+  registry.npmmirror.com/@jsmini/is@0.8.5:
+    resolution: {integrity: sha512-YVyM6emY6JT/b9D53Nsk32dyccwk2JC7brrh+g+HcWLqa/YLcct7/jbSubIM5jb4ziZfRiygep1hCfL4Wd7XQg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@jsmini/is/-/is-0.8.5.tgz}
+    name: '@jsmini/is'
+    version: 0.8.5
+    engines: {node: '>= 0.12.0'}
+    dependencies:
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.22.3
+      '@jsmini/type': registry.npmmirror.com/@jsmini/type@0.9.2
+    dev: false
+
+  registry.npmmirror.com/@jsmini/type@0.9.2:
+    resolution: {integrity: sha512-fTsXi1wQQOfSy3KjowGIZE4rrr1U8RpsHG0m/4lxB0s7OD5ghX51PaRL/2heAGD4uDaJzeHYcW9aAwF/v5kUkg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@jsmini/type/-/type-0.9.2.tgz}
+    name: '@jsmini/type'
+    version: 0.9.2
+    engines: {node: '>= 0.12.0'}
+    dependencies:
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.22.3
+    dev: false
+
+  registry.npmmirror.com/@templatejs/parser@2.4.0:
+    resolution: {integrity: sha512-tcv2c7GcDudIF3NemwtO0LhIsFjWyv/NMUn9t2iWzGskbA12QWwck6ucHjsU4APHu2Cx92rqKVU0hMkzToqfsw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@templatejs/parser/-/parser-2.4.0.tgz}
+    name: '@templatejs/parser'
+    version: 2.4.0
+    engines: {node: '>= 0.12.0'}
+    dependencies:
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.22.3
+      '@jsmini/extend': registry.npmmirror.com/@jsmini/extend@0.3.3
+    dev: false
+
+  registry.npmmirror.com/@templatejs/runtime@2.4.0:
+    resolution: {integrity: sha512-fhnxE4BqOhmkYvNs5PRireRenZnxsfYQlWzNZX5Fb7muJM9+fehgoNOsgGmwYbCdB65lTlnypQKohDuQz365Lw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@templatejs/runtime/-/runtime-2.4.0.tgz}
+    name: '@templatejs/runtime'
+    version: 2.4.0
+    engines: {node: '>= 0.12.0'}
+    dependencies:
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.22.3
+      '@jsmini/extend': registry.npmmirror.com/@jsmini/extend@0.3.3
+      '@jsmini/type': registry.npmmirror.com/@jsmini/type@0.9.2
+      '@templatejs/parser': registry.npmmirror.com/@templatejs/parser@2.4.0
     dev: false
 
   registry.npmmirror.com/@types/acorn@4.0.6:
@@ -3578,6 +3631,19 @@ packages:
     version: 2.2.1
     engines: {node: '>=6'}
     dev: true
+
+  registry.npmmirror.com/template_js@2.4.0:
+    resolution: {integrity: sha512-v/+rdh0HSkFGG+BpFMGnYIQd6F5+m+kB3EQrcmvAzVIP43nbAlpuY5Dgrb9jA0csvzfczEqFkLEOrtzw23mo8Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/template_js/-/template_js-2.4.0.tgz}
+    name: template_js
+    version: 2.4.0
+    engines: {node: '>= 0.12.0'}
+    dependencies:
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime@7.22.3
+      '@jsmini/extend': registry.npmmirror.com/@jsmini/extend@0.3.3
+      '@jsmini/type': registry.npmmirror.com/@jsmini/type@0.9.2
+      '@templatejs/parser': registry.npmmirror.com/@templatejs/parser@2.4.0
+      '@templatejs/runtime': registry.npmmirror.com/@templatejs/runtime@2.4.0
+    dev: false
 
   registry.npmmirror.com/terser-webpack-plugin@5.3.9(webpack@5.85.0):
     resolution: {integrity: sha512-ZuXsqE07EcggTWQjXUj+Aot/OMcD0bMKGgF63f7UxYcu5/AJF53aIpK1YoP5xR9l6s/Hy2b+t1AM0bLNPRuhwA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/terser-webpack-plugin/-/terser-webpack-plugin-5.3.9.tgz}
