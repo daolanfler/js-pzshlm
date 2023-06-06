@@ -4,7 +4,6 @@ import template from "template_js";
 import { extendDeep } from "@jsmini/extend";
 
 export async function copyFile(from, to) {
-  console.log(from, to);
   await fs.copy(from, to);
 }
 

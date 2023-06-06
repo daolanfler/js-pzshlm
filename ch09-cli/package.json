@@ -8,7 +8,7 @@
   },
   "exports": "./index.js",
   "bin": {
-    "jslibbook": "./index.js"
+    "jslibbook": "./bin/index.js"
   },
   "keywords": [],
   "author": "",
