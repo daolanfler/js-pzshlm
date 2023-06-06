@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.base.json",
-  "include": ["ch01", "ch08/**/*"],
-  "exclude": ["**/*.test.ts"]
+  "include": ["ch01", "ch08/**/*", "ch09-cli/**/*"],
+  "exclude": ["**/*.test.ts", "node_modules"]
 }
