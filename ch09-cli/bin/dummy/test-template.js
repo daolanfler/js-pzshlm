@@ -16,6 +16,6 @@ console.log(x1);
 
 const curDirname = getDirName(import.meta.url);
 
-copyTmpl(path.resolve(curDirname, "./a.tmpl"), path.resolve(curDirname, "b"), {
+await copyTmpl(path.resolve(curDirname, "./a.tmpl"), path.resolve(curDirname, "b"), {
   win: true,
 });

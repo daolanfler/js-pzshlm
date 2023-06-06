@@ -1,15 +1,15 @@
 import { resolve } from "path";
-import { copyTmpl, copyFile, mergeTmpl2JSON } from "../util/copy";
-import { getDirName } from "../util/file";
+import { copyTmpl, copyFile, mergeTmpl2JSON } from "../util/copy.js";
+import { getDirName } from "../util/file.js";
 
-export function init(cmdPath, name, option) {
+export async function init(cmdPath, name, option) {
   if (!option.prettier) {
     return;
   }
 
   console.log("@js-lib/prettier: init");
 
-  copyTmpl(
+  await copyTmpl(
     resolve(getDirName(import.meta.url), `./template/.prettierignore`),
     resolve(cmdPath, name, ".prettierignore"),
     option

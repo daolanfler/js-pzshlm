@@ -8,11 +8,13 @@ export async function copyFile(from, to) {
 }
 
 export function mkdirSyncGuard(target) {
+  if (fs.existsSync(target)) {
+    return;
+  }
   try {
     // in case recursive is not supported
     fs.mkdirSync(target, { recursive: true });
   } catch (e) {
-    // ensure
     fs.mkdirpSync(target);
   }
 }

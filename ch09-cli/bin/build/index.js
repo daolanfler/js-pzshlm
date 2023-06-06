@@ -1,11 +1,11 @@
 import path from "path";
 import { getDirName } from "../util/file.js";
-import { copyTmpl, copyFile, mergeTmpl2JSON } from '../util/copy.js';
+import { copyTmpl, copyFile, mergeTmpl2JSON } from "../util/copy.js";
 
-export function init(cmdPath, name, option) {
+export async function init(cmdPath, name, option) {
   console.log("@js-lib/build: init");
 
-  copyTmpl(
+  await copyTmpl(
     path.resolve(getDirName(import.meta.url), `./template/rollup.js.tmpl`),
     path.resolve(cmdPath, name, "config/rollup.js"),
     option
@@ -32,7 +32,7 @@ export function init(cmdPath, name, option) {
     path.resolve(cmdPath, name, "config/rollup.config.js")
   );
 
-  copyTmpl(
+  await copyTmpl(
     path.resolve(getDirName(import.meta.url), `./template/.babelrc.tmpl`),
     path.resolve(cmdPath, name, ".babelrc"),
     option
@@ -45,4 +45,3 @@ export function init(cmdPath, name, option) {
     option
   );
 }
-

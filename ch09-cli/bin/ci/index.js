@@ -1,8 +1,8 @@
 import { resolve } from "path";
-import { copyTmpl } from "../util/copy";
+import { copyTmpl } from "../util/copy.js";
 import { getDirName } from "../util/file.js";
 
-export function init(cmdPath, name, option) {
+export async function init(cmdPath, name, option) {
   if (!option.ci) {
     return;
   }
@@ -10,19 +10,19 @@ export function init(cmdPath, name, option) {
   console.log("@js-lib/ci: init");
 
   if (option.ci === "github") {
-    copyTmpl(
+    await copyTmpl(
       resolve(getDirName(import.meta.url), `./template/.github.yml.tmpl`),
       resolve(cmdPath, name, ".github/workflows/ci.yml"),
       option
     );
   } else if (option.ci === "circleci") {
-    copyTmpl(
+    await copyTmpl(
       resolve(getDirName(import.meta.url), `./template/.circleci.yml.tmpl`),
       resolve(cmdPath, name, ".circleci/config.yml"),
       option
     );
   } else if (option.ci === "travis") {
-    copyTmpl(
+    await copyTmpl(
       resolve(getDirName(import.meta.url), `./template/.travis.yml`),
       resolve(cmdPath, name, ".travis.yml"),
       option

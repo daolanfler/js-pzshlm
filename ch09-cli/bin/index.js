@@ -2,6 +2,8 @@
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import process from "process";
+import { runInitPrompts } from "./run-prompt.js";
+import { init } from "./init.js";
 
 const argv = yargs(hideBin(process.argv))
   .usage(`usage: jslibbook [options]`)
@@ -22,12 +24,13 @@ const argv = yargs(hideBin(process.argv))
         type: "string",
       });
     },
-    (argv) => {
-      console.log("in callback", argv);
-      // TODO
+    async (argv) => {
+      // console.log((argv));
+      const answers = await runInitPrompts(argv._[1], argv);
+      // console.log(answers);
+      init(argv, answers);
     }
   )
   .epilog("copyRight by zhangsan")
   .demandCommand().argv;
 
-console.log(argv);

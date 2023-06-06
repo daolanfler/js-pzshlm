@@ -1,20 +1,20 @@
 import { resolve } from "path";
-import { copyTmpl, mergeTmpl2JSON } from "../util/copy";
+import { copyTmpl, mergeTmpl2JSON } from "../util/copy.js";
 import { getDirName } from "../util/file.js";
 
-export function init(cmdPath, name, option) {
+export async function init(cmdPath, name, option) {
   if (!option.eslint) {
     return;
   }
 
   console.log("@js-lib/eslint: init");
 
-  copyTmpl(
+  await copyTmpl(
     resolve(getDirName(import.meta.url), `./template/.eslintignore`),
     resolve(cmdPath, name, ".eslintignore")
   );
 
-  copyTmpl(
+  await copyTmpl(
     resolve(getDirName(import.meta.url), `./template/.eslintrc.js.tmpl`),
     resolve(cmdPath, name, ".eslintrc.js"),
     option
@@ -26,4 +26,3 @@ export function init(cmdPath, name, option) {
     option
   );
 }
-
