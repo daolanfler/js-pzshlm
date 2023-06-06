@@ -1,6 +1,9 @@
 {
   "files": [],
   "references": [
+    // order matters if below configs include same files, e.g. vitest & app 's
+    // include may overlap then which one should take precedence when it comes
+    // to intellesense / auto-import etc. in those overlapped files
     {
       "path": "./tsconfig.vitest.json"
     },
