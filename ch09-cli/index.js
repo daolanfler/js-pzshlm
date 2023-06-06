@@ -1,13 +1,9 @@
 #!/usr/bin/env node
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
+import process from "process";
 
-const yargs = require("yargs");
-const { log } = require("console");
-const process = require("process");
-
-// option, not subcommand
-// yargs.alias("v", "version").argv;
-
-const argv = yargs
+const argv = yargs(hideBin(process.argv))
   .usage(`usage: jslibbook [options]`)
   .usage("usage: jslibbook <command> [options]")
   .example("jslibook new mylib", "新建一个名为mylib的项目")
@@ -27,7 +23,7 @@ const argv = yargs
       });
     },
     (argv) => {
-      console.log("in callback" , argv);
+      console.log("in callback", argv);
       // TODO
     }
   )
