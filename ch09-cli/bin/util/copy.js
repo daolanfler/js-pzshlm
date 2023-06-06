@@ -49,7 +49,7 @@ export function mergeJSON2JSON(from, to) {
   mergeObj2JSON(json, to);
 }
 
-function mergeTmpl2JSON(from, to, data = {}) {
+export function mergeTmpl2JSON(from, to, data = {}) {
   const json = JSON.parse(readTmpl(from, data));
   mergeObj2JSON(json, to);
 }
